@@ -1,9 +1,12 @@
 ﻿using Business.Abstract;
+using Business.Constants;
+using Core.Utilities.Results;
 using DataAccess.Abstract;
 using Entities.Concrete;
 using Entities.DTOs;
 using System;
 using System.Collections.Generic;
+using System.Linq.Expressions;
 using System.Text;
 
 namespace Business.Concrete
@@ -17,78 +20,50 @@ namespace Business.Concrete
             _carDal = carDal;
         }
 
-        public void Add(Car car)
+        public IResult Add(Car car)
         {
             if (car.DailyPrice > 0)
             {
                 _carDal.Add(car);
-                Console.WriteLine("Araç Sisteme Başarılı Bir Şekilde Eklendi.");
+               return new SuccessResult(Messages.AddedCar);
             }
             else
             {
-                Console.WriteLine($"Lütfen Günlük Fiyat Bölümünü Sıfırdan Büyük Giriniz! Girdiğiniz Miktar : {car.DailyPrice}");
+                return new ErrorResult(Messages.FailedCarAddOrUpdate);
             }
         }
 
-        public void Delete(Car car)
+        public IResult Delete(Car car)
         {
-            try
-            {
-                _carDal.Delete(car);
-                Console.WriteLine("Araç Sistemden Başarılı Bir Şekilde Silindi.");
-            }
-            catch (ArgumentNullException)
-            {
-
-                Console.WriteLine(" Üzgünüm..Girdiğiniz ID Değerinde Bir Araç Bulunamadı!");
-            }
+            _carDal.Delete(car);
+            return new SuccessResult(Messages.DeletedCar);
         }
 
-        public List<Car> GetAll()
+        public IDataResult<List<Car>> GetAll()
         {
-            return _carDal.GetAll();
+            return new SuccessDataResult<List<Car>>(_carDal.GetAll());
         }
 
-        public List<Car> GetAllByBrandId(int id)
+        public IDataResult<Car> GetById(int id)
         {
-            return _carDal.GetAll(c => c.BrandId == id);
+            return new SuccessDataResult<Car>(_carDal.Get(c => c.CarId == id));
         }
 
-        public List<Car> GetAllByColorId(int id)
+        public IDataResult<List<CarDetailDto>> GetCarDetails(Expression<Func<Car, bool>> filter = null)
         {
-            return _carDal.GetAll(c => c.ColorId == id);
+            return new SuccessDataResult<List<CarDetailDto>>(_carDal.GetCarDetails(filter));
         }
 
-        public List<Car> GetByDailyPrice(decimal min, decimal max)
-        {
-            return _carDal.GetAll(c => c.DailyPrice >= min && c.DailyPrice <= max);
-        }
-
-        public Car GetById(int id)
-        {
-            return _carDal.Get(c => c.CarId == id);
-        }
-
-        public List<Car> GetByModelYear(string year)
-        {
-            return _carDal.GetAll(c => c.ModelYear.Contains(year) == true);
-        }
-
-        public List<CarDetailDto> GetCarDetails()
-        {
-            return _carDal.GetCarDetails();
-        }
-
-        public void Update(Car car)
+        public IResult Update(Car car)
         {
             if (car.DailyPrice > 0)
             {
                 _carDal.Update(car);
-                Console.WriteLine("Araç Başarılı Bir Şekilde Sistemde Güncellendi.");
+                return new SuccessResult(Messages.UpdatedCar);
             }
             else
             {
-                Console.WriteLine($"Lütfen Günlük Fiyat Bölümünü Sıfırdan Büyük Giriniz! Girdiğiniz Miktar : {car.DailyPrice}");
+                return new ErrorResult(Messages.FailedCarAddOrUpdate);
             }
         }       
     }
