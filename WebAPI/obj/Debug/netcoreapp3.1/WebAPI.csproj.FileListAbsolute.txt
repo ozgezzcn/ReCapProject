@@ -66,3 +66,8 @@ C:\Users\Özge Özcan\Desktop\ReCapProject\WebAPI\obj\Debug\netcoreapp3.1\WebAPI
 C:\Users\Özge Özcan\Desktop\ReCapProject\WebAPI\obj\Debug\netcoreapp3.1\WebAPI.dll
 C:\Users\Özge Özcan\Desktop\ReCapProject\WebAPI\obj\Debug\netcoreapp3.1\WebAPI.pdb
 C:\Users\Özge Özcan\Desktop\ReCapProject\WebAPI\obj\Debug\netcoreapp3.1\WebAPI.genruntimeconfig.cache
+C:\Users\Özge Özcan\Desktop\ReCapProject\WebAPI\bin\Debug\netcoreapp3.1\Autofac.dll
+C:\Users\Özge Özcan\Desktop\ReCapProject\WebAPI\bin\Debug\netcoreapp3.1\Autofac.Extensions.DependencyInjection.dll
+C:\Users\Özge Özcan\Desktop\ReCapProject\WebAPI\bin\Debug\netcoreapp3.1\Autofac.Extras.DynamicProxy.dll
+C:\Users\Özge Özcan\Desktop\ReCapProject\WebAPI\bin\Debug\netcoreapp3.1\Castle.Core.dll
+C:\Users\Özge Özcan\Desktop\ReCapProject\WebAPI\bin\Debug\netcoreapp3.1\FluentValidation.dll
