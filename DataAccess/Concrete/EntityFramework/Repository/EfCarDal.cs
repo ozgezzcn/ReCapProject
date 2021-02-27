@@ -10,7 +10,7 @@ using System.Linq;
 using System.Linq.Expressions;
 using System.Text;
 
-namespace DataAccess.Concrete.EntityFramework
+namespace DataAccess.Concrete.EntityFramework.Repository
 {
     public class EfCarDal : EfEntityRepositoryBase<Car, RentACarContext>, ICarDal
     {
@@ -23,6 +23,8 @@ namespace DataAccess.Concrete.EntityFramework
                              on c.ColorId equals co.ColorId
                              join b in context.Brands
                              on c.BrandId equals b.BrandId
+                             join ci in context.CarImages
+                             on c.CarId equals ci.CarId
                              select new CarDetailDto
                              {
                                  CarId = c.CarId,
@@ -30,8 +32,10 @@ namespace DataAccess.Concrete.EntityFramework
                                  ColorName = co.ColorName,
                                  DailyPrice = c.DailyPrice,
                                  CarType = c.CarType,
+                                 ModelYear = c.ModelYear,
                                  Description = c.Description,
-                                 ModelYear = c.ModelYear
+                                 CarImageDate = ci.CarImageDate,
+                                 ImagePath = ci.ImagePath
                              };
                 return result.ToList();
             }

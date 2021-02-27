@@ -71,3 +71,5 @@ C:\Users\Özge Özcan\Desktop\ReCapProject\WebAPI\bin\Debug\netcoreapp3.1\Autofa
 C:\Users\Özge Özcan\Desktop\ReCapProject\WebAPI\bin\Debug\netcoreapp3.1\Autofac.Extras.DynamicProxy.dll
 C:\Users\Özge Özcan\Desktop\ReCapProject\WebAPI\bin\Debug\netcoreapp3.1\Castle.Core.dll
 C:\Users\Özge Özcan\Desktop\ReCapProject\WebAPI\bin\Debug\netcoreapp3.1\FluentValidation.dll
+C:\Users\Özge Özcan\Desktop\ReCapProject\WebAPI\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Http.Features.dll
+C:\Users\Özge Özcan\Desktop\ReCapProject\WebAPI\bin\Debug\netcoreapp3.1\System.IO.Pipelines.dll
