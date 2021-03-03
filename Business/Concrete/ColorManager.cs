@@ -14,9 +14,10 @@ namespace Business.Concrete
     public class ColorManager : IColorService
     {
         IColorDal _colorDal;
-        public ColorManager(IColorDal colorDal)
+
+        public ColorManager(IColorDal brandDal)
         {
-            _colorDal = colorDal;
+            _colorDal = brandDal;
         }
 
         [ValidationAspect(typeof(ColorValidator))]
@@ -30,6 +31,7 @@ namespace Business.Concrete
         {
             _colorDal.Delete(color);
             return new SuccessResult(Messages.DeletedColor);
+
         }
 
         public IDataResult<List<Color>> GetAll()
@@ -40,7 +42,7 @@ namespace Business.Concrete
 
         public IDataResult<Color> GetById(int id)
         {
-            return new SuccessDataResult<Color>(_colorDal.Get(c => c.ColorId == id));
+            return new SuccessDataResult<Color>(_colorDal.Get(c => c.Id == id));
         }
 
         [ValidationAspect(typeof(ColorValidator))]
@@ -48,6 +50,7 @@ namespace Business.Concrete
         {
             _colorDal.Update(entity);
             return new SuccessResult(Messages.UpdatedColor);
+
         }
     }
 }

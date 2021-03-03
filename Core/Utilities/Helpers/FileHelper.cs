@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.Text;
 using Core.Utilities.Results;
 
-namespace Core.Utilities.FileHelper
+namespace Core.Utilities.Helpers
 {
     public class FileHelper
     {
@@ -18,12 +18,15 @@ namespace Core.Utilities.FileHelper
                 if (file.Length > 0)
                     using (var stream = new FileStream(sourcepath, FileMode.Create))
                         file.CopyTo(stream);
+
                 File.Move(sourcepath, result.newPath);
             }
             catch (Exception exception)
             {
+
                 return exception.Message;
             }
+
             return result.Path2;
         }
 
