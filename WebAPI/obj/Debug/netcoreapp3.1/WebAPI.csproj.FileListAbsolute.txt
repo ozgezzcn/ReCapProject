@@ -73,3 +73,5 @@ C:\Users\Özge Özcan\Desktop\ReCapProject\WebAPI\bin\Debug\netcoreapp3.1\Castle
 C:\Users\Özge Özcan\Desktop\ReCapProject\WebAPI\bin\Debug\netcoreapp3.1\FluentValidation.dll
 C:\Users\Özge Özcan\Desktop\ReCapProject\WebAPI\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Http.Features.dll
 C:\Users\Özge Özcan\Desktop\ReCapProject\WebAPI\bin\Debug\netcoreapp3.1\System.IO.Pipelines.dll
+C:\Users\Özge Özcan\Desktop\ReCapProject\WebAPI\bin\Debug\netcoreapp3.1\log4net.dll
+C:\Users\Özge Özcan\Desktop\ReCapProject\WebAPI\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Authentication.JwtBearer.dll

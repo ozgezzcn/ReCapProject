@@ -1,4 +1,5 @@
 ﻿using Business.Concrete;
+using Core.Entities.Concrete;
 using DataAccess.Concrete.EntityFramework;
 using DataAccess.Concrete.EntityFramework.Repository;
 using DataAccess.Concrete.InMemory;
@@ -40,7 +41,6 @@ namespace ConsoleUI
                         GetAllCarDetails(carManager);
                         CarUpdate(carManager);
                         break;
-
 
                     case 3:
                         GetAllCarDetails(carManager);
